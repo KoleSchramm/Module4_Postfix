@@ -17,17 +17,27 @@ public class PostfixCalculator {
                     if (element.equals("+")) {
                         stack.push(stack.pop() + stack.pop());
                     }
-                    if (element.equals("-")) {
-                        stack.push(stack.pop() - stack.pop());
+                    else if (element.equals("-")) {
+                        double num1 = stack.pop();
+                        double num2 = stack.pop();
+                        stack.push(num2-num1);
                     }
-                    if (element.equals("*")) {
+                    else if (element.equals("*")) {
                         stack.push(stack.pop() * stack.pop());
                     }
-                    if (element.equals("/")) {
-                        stack.push(stack.pop() / stack.pop());
+                    else if (element.equals("/")) {
+                        double num1 = stack.pop();
+                        double num2 = stack.pop();
+                        stack.push(num2/num1);
                     }
-                    if (element.equals("%")) {
-                        stack.push(stack.pop() % stack.pop());
+                    else if (element.equals("%")) {
+                        double num1 = stack.pop();
+                        double num2 = stack.pop();
+                        stack.push(num2%num1);
+                    }
+                    else{
+                        System.out.println("Invalid input.");
+                        return 0;
                     }
                 }
             }
