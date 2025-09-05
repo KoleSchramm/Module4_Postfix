@@ -47,6 +47,7 @@ public class PostfixCalculator {
             }
             //Return last element in stack. If more than one element, print error message
             if(stack.size() == 1) {
+                System.out.println("Result: " + stack.peek());
                 return stack.peek();
             }
             else{
