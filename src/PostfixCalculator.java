@@ -8,11 +8,14 @@ public class PostfixCalculator {
         Stack<Double> stack = new Stack<>();
 
         try {
+            //check for each token of string
             while (scan.hasNext()) {
                 element = scan.next();
 
+                //If token can be parsed into a double, add double to stack
                 try {
                     stack.push(Double.parseDouble(element));
+                //If token is not a double, check for operator
                 } catch (Exception e) {
                     if (element.equals("+")) {
                         stack.push(stack.pop() + stack.pop());
@@ -36,11 +39,13 @@ public class PostfixCalculator {
                         stack.push(num2%num1);
                     }
                     else{
+                        //If token is neither a double nor operator, print error message
                         System.out.println("Invalid input.");
                         return 0;
                     }
                 }
             }
+            //Return last element in stack. If more than one element, print error message
             if(stack.size() == 1) {
                 return stack.peek();
             }
