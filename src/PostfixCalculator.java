@@ -40,7 +40,7 @@ public class PostfixCalculator {
                     }
                     else{
                         //If token is neither a double nor operator, print error message
-                        System.out.println("Invalid input.");
+                        System.out.println("Unknown characters.");
                         return 0;
                     }
                 }
@@ -51,12 +51,12 @@ public class PostfixCalculator {
                 return stack.peek();
             }
             else{
-                System.out.println("Invalid input.");
+                System.out.println("Not enough operators or too many operands.");
                 return 0;
             }
         }
         catch (Exception e){
-            System.out.println("Invalid input.");
+            System.out.println("Too many operators or not enough operands.");
             return 0;
         }
     }
